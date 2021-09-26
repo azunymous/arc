@@ -1,0 +1,10 @@
+.env
+/arc
+/report
+/bin/
+*.log
+/*.json
+.local-settings.yaml
+.vscode/
+.DS_store
+node_modules/
