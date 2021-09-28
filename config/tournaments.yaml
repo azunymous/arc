@@ -1,0 +1,45 @@
+tournaments:
+  all:
+    2021/10/02:
+      - name: East Coast Throwdown - The Pit
+        region: US East
+        platform: Unknown
+        timeUTC: 18:00
+        host: @ecthrowdown
+        details: |
+          Melty Blood Type Lumina Concept exhibition matches curated by LP|Monta!
+        links:
+          - https://smash.gg/ECTThePit
+          - https://twitter.com/ecthrowdown/status/1441441295684280322
+        tags:
+          - invitational
+          - offline
+    2021/10/03:
+      - name: EU Launch
+        platform: PC
+        region: EU
+        timeUTC: 17:00
+        host: @Mega_Gibz
+        details: |
+          Melty Blood: Type Lumina European PC Launch Tournament on the 3rd October @ 6pm BST / 5pm UTC.
+          Join the Discord for the bracket.
+        links:
+          - https://twitter.com/Mega_Gibz/status/1442458049789132810
+          - https://discord.gg/ks3q7kuUEM
+        tags:
+          - open
+          - online
+    2021/10/08:
+      - name: BANANARENA
+        platform: PC
+        region: EU
+        timeUTC: 15:00
+        host: @ban_anya
+        details: |
+          October 8th @ 17:00 CEST. PC Europe Region.
+        links:
+          - https://challonge.com/bananarenaMBTLw1
+          - https://twitter.com/ban_anya/status/1440306526170726404
+        tags:
+          - open
+          - online
