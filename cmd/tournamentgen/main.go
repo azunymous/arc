@@ -47,9 +47,8 @@ func Load(path string, writer io.Writer) {
 
 	log.Printf("Ingested tournament data")
 
-	err = tournament.NewTemplater(tournaments).Generate(writer)
+	err = tournament.NewTournamentsFromConfig(tournaments).GenerateHTML(writer)
 	if err != nil {
 		log.Fatalf("Could not parse path %s: %v", path, err)
 	}
 }
-
