@@ -39,9 +39,10 @@ const Home = () => {
                                 Check the quick links on the right, get started with <Link href="/intro">intro</Link> or visit the full <Link href="/resources">resources</Link> page
                             </div>
                             <div className="column is-one-quarter">
-                                <figure className="image ml-auto is-flex is-justify-content-right ">
-                                    <img src="/img/red-arc-chara-img.png"/>
-                                </figure>
+                                {/*TODO Fix resolution*/}
+                                {/*<figure className="image ml-auto is-flex is-justify-content-right ">*/}
+                                {/*    <img src="/img/red-arc-chara-img.png"/>*/}
+                                {/*</figure>*/}
                             </div>
                         </div>
                     </div>

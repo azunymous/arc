@@ -1,7 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import eventHtml from '../public/events.html'
+import Tournaments from "../components/tournaments";
 
 const Events = () => {
+
+    const [selectedTab, setSelectedTab] = useState("0");
+
     useEffect(() => {
         const TABS = [...document.querySelectorAll('#tabs li')];
         const CONTENT = [...document.querySelectorAll('#tab-content section')];
@@ -12,6 +16,7 @@ const Events = () => {
             TABS.forEach((tab) => {
                 tab.addEventListener('click', (e) => {
                     let selected = tab.getAttribute('data-tab');
+                    setSelectedTab(selected)
                     updateActiveTab(tab);
                     updateActiveContent(selected);
                 })
@@ -43,6 +48,27 @@ const Events = () => {
     })
 
 
+    function tabs() {
+        return <div className="tabs is-centered" id="tabs">
+            <ul>
+                <li className="is-active" data-tab="1">
+                    <a>
+                                            <span className="icon is-small"><i className="fas fa-image"
+                                                                               aria-hidden="true"></i></span>
+                        <span>Upcoming</span>
+                    </a>
+                </li>
+                <li data-tab="2">
+                    <a>
+                                            <span className="icon is-small"><i className="fas fa-music"
+                                                                               aria-hidden="true"></i></span>
+                        <span>Completed</span>
+                    </a>
+                </li>
+            </ul>
+        </div>;
+    }
+
     return (
         <main>
             <div className="columns">
@@ -54,8 +80,9 @@ const Events = () => {
                         </h1>
 
                         <div className="content">
-                            {/*TODO Replace with API call and JSX*/}
-                            <div dangerouslySetInnerHTML={{__html: eventHtml}}/>
+                            {tabs()}
+
+                            <Tournaments selected={selectedTab}/>
                         </div>
                     </div>
 
