@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {useState} from "react";
+import Moment from "react-moment";
 
 export default function Tournaments({selected}) {
     // TODO fix the following env loading
@@ -9,12 +10,15 @@ export default function Tournaments({selected}) {
     const [err, setErr] = useState("");
 
     useEffect(() => {
-        console.log(process.env)
+        Moment.startPooledTimer();
         fetch(API_URI + "/events")
             .then(results => results.json())
             .then(data => {
                 setEvents(data)
-            }).catch((err) => {setErr("Failed to fetch events. Try refreshing the page after a bit."); console.log(err)});
+            }).catch((err) => {
+            setErr("Failed to fetch events. Try refreshing the page after a bit.");
+            console.log(err)
+        });
     }, []); //
 
     if (err !== "" || events === null) {
@@ -31,7 +35,6 @@ export default function Tournaments({selected}) {
         return events.upcoming.map((tourney) => {
             return (
                 <>
-                    <h3>{tourney.date}</h3>
                     {tourney.dayTournaments.map((dayTournament) => {
                         return displayDayTournaments(dayTournament)
                     })}
@@ -57,8 +60,21 @@ export default function Tournaments({selected}) {
     }
 
     function displayDayTournaments(dayTournament) {
+        const calendarStrings = {
+            lastDay: '[Yesterday at] LT',
+            sameDay: '[Today at] LT',
+            nextDay: '[Tomorrow at] LT',
+            lastWeek: '[last] dddd [at] LT',
+            nextWeek: 'dddd [at] LT',
+            sameElse: 'L [at] LT'
+        };
         return (
             <>
+                <h3>
+                    <Moment unix local withTitle calendar={calendarStrings}>
+                        {dayTournament.timeUnixSec}
+                    </Moment>
+                </h3>
                 <h4>{dayTournament.name}</h4>
                 <div className="field is-grouped is-grouped-multiline">
                     <div className="control">
@@ -81,8 +97,10 @@ export default function Tournaments({selected}) {
                         )
                     })}
                 </div>
-                <strong>Time (UTC): {dayTournament.timeUtc}</strong> <br/>
                 <strong>Host: <a href={"https://twitter.com/" + dayTournament.host}>{dayTournament.host}</a></strong>
+                 - <Moment unix local fromNow>
+                    {dayTournament.timeUnixSec}
+                </Moment>
                 <p>{dayTournament.details}</p>
                 <strong>Links:</strong>
                 {dayTournament.links.map((link) => {

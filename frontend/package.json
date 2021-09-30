@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "next": "10.0.0",
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
@@ -20,6 +21,7 @@
     "raw-loader": "^4.0.2",
     "react": "npm:@preact/compat@0.0.3",
     "react-dom": "npm:@preact/compat@0.0.3",
+    "react-moment": "^1.1.1",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
   },
   "license": "UNLICENSED"

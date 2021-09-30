@@ -28,10 +28,13 @@ func main() {
 	srv := server.NewSrv(t)
 
 	app := fiber.New()
-	app.Use(cors.New(), limiter.New(), logger.New(), requestid.New())
+	app.Use(cors.New(), limiter.New(limiter.Config{Max: 10}), logger.New(), requestid.New())
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World 👋!")
+		return c.JSON(struct {
+			Name    string `json:"name,omitempty"`
+			Version string `json:"version,omitempty"`
+		}{"ARC.RED", "0.0.1"})
 	})
 	app.Get("/events", srv.Events)
 

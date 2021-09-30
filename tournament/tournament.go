@@ -2,6 +2,7 @@ package tournament
 
 import (
 	_ "embed"
+	"fmt"
 	"html/template"
 	"io"
 	"log"
@@ -19,15 +20,23 @@ type Day struct {
 	DayTournaments []DayTournament `json:"dayTournaments,omitempty"`
 }
 type DayTournament struct {
-	Name     string    `json:"name,omitempty"`
-	Platform string    `json:"platform,omitempty"`
-	Region   string    `json:"region,omitempty"`
-	TimeUTC  string    `json:"timeUtc,omitempty"`
-	Time     time.Time `json:"time"`
-	Host     string    `json:"host,omitempty"`
-	Details  string    `json:"details,omitempty"`
-	Links    []string  `json:"links,omitempty"`
-	Tags     []string  `json:"tags,omitempty"`
+	Name        string      `json:"name,omitempty"`
+	Platform    string      `json:"platform,omitempty"`
+	Region      string      `json:"region,omitempty"`
+	TimeUTC     string      `json:"timeUtc,omitempty"`
+	TimeUnixSec TimeUnixSec `json:"timeUnixSec"`
+	Time        time.Time   `json:"time"`
+	Host        string      `json:"host,omitempty"`
+	Details     string      `json:"details,omitempty"`
+	Links       []string    `json:"links,omitempty"`
+	Tags        []string    `json:"tags,omitempty"`
+}
+
+type TimeUnixSec time.Time
+
+func (t TimeUnixSec) MarshalJSON() ([]byte, error) {
+	stamp := fmt.Sprintf("%d", time.Time(t).Unix())
+	return []byte(stamp), nil
 }
 
 //go:embed html.gohtml
@@ -85,14 +94,15 @@ func convertTournament(date string, tournament ConfigTournament) DayTournament {
 		log.Printf("Failed to parse time: %v, continuing", err)
 	}
 	return DayTournament{
-		Name:     tournament.Name,
-		Platform: tournament.Platform,
-		Region:   tournament.Region,
-		TimeUTC:  tournament.TimeUTC,
-		Time:     parsed,
-		Host:     tournament.Host,
-		Details:  tournament.Details,
-		Links:    tournament.Links,
-		Tags:     tournament.Tags,
+		Name:        tournament.Name,
+		Platform:    tournament.Platform,
+		Region:      tournament.Region,
+		Time:        parsed,
+		TimeUTC:     tournament.TimeUTC,
+		TimeUnixSec: TimeUnixSec(parsed),
+		Host:        tournament.Host,
+		Details:     tournament.Details,
+		Links:       tournament.Links,
+		Tags:        tournament.Tags,
 	}
 }
