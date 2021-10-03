@@ -8,7 +8,7 @@ const Home = () => {
                 <div className="column  is-one-fifth has-text-centered">
                     <aside className="menu">
                         <p className="menu-label">
-                           External Shortcuts
+                            External Shortcuts
                         </p>
                         <ul className="menu-list">
                             <li><a href="https://meltyblood.typelumina.com/en/">Official Site</a></li>
@@ -34,9 +34,9 @@ const Home = () => {
                             </p>
                         </section>
                         <div className="columns">
-
                             <div className="column is-three-quarters">
-                                Check the quick links on the right, get started with <Link href="/intro">intro</Link> or visit the full <Link href="/resources">resources</Link> page
+                                Check the quick links on the right, look at the <Link href="/events">events</Link> page
+                                or visit the full <Link href="/resources">list of resources</Link>.
                             </div>
                             <div className="column is-one-quarter">
                                 {/*TODO Fix resolution*/}

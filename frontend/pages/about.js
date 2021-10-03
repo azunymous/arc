@@ -8,7 +8,7 @@ const About = () => (
             <div>
                 Fighting game catalogue of resources and tutorials focused on Melty Blood.
 
-                Entirely open source.
+                Entirely <a href={"https://github.com/azunymous/arc"}>open source</a>.
             </div>
         </div>
     </main>

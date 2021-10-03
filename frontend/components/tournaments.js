@@ -122,7 +122,7 @@ export default function Tournaments({selected}) {
     } else {
         return (
             <section data-content="1">
-                <h2>Upcoming</h2>
+                <h2>Current & Upcoming</h2>
                 {displayUpcoming()}
             </section>
         )

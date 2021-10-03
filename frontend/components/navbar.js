@@ -48,12 +48,6 @@ export default function Navbar({children}) {
 
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-start">
-                        <Link href={"/intro"}>
-                            <div className="navbar-item is-clickable">
-                                Intro
-                            </div>
-                        </Link>
-
                         <Link href={"/resources"}>
                             <div className="navbar-item is-clickable">
                                 Resources
@@ -68,18 +62,18 @@ export default function Navbar({children}) {
                         </Link>
 
 
-                    <Link href={"/about"}>
-                        <div className="navbar-item is-clickable">
-                            About
-                        </div>
-                    </Link>
+                        <Link href={"/about"}>
+                            <div className="navbar-item is-clickable">
+                                About
+                            </div>
+                        </Link>
                     </div>
 
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <a className="button is-primary" href="/board">
-                                    <strong>Board</strong>
+                                <a className="button is-light" href={"https://github.com/azunymous/arc/issues/new?template=new-event-issue-template.md"}>
+                                    Add Event
                                 </a>
                             </div>
                         </div>

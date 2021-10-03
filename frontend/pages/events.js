@@ -55,7 +55,7 @@ const Events = () => {
                     <a>
                                             <span className="icon is-small"><i className="fas fa-image"
                                                                                aria-hidden="true"></i></span>
-                        <span>Upcoming</span>
+                        <span>Current & Upcoming</span>
                     </a>
                 </li>
                 <li data-tab="2">
