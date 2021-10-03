@@ -7,18 +7,21 @@ import (
 
 type ConfigTournaments struct {
 	Tournaments struct {
-		All map[string][]ConfigTournament `json:"all"`
+		All []ConfigTournament `json:"all"`
 	} `json:"tournaments"`
 }
 type ConfigTournament struct {
-	Name     string   `json:"name"`
-	Platform string   `json:"platform"`
-	Region   string   `json:"region"`
-	TimeUTC  string   `json:"timeUTC"`
-	Host     string   `json:"host"`
-	Details  string   `json:"details"`
-	Links    []string `json:"links"`
-	Tags     []string `json:"tags"`
+	Name       string   `json:"name"`
+	Platform   string   `json:"platform"`
+	Region     string   `json:"region"`
+	Date       string   `json:"date"`
+	TimeUTC    string   `json:"timeUTC"`
+	EndDate    string   `json:"endDate"`
+	EndTimeUTC string   `json:"endTimeUTC"`
+	Host       string   `json:"host"`
+	Details    string   `json:"details"`
+	Links      []string `json:"links"`
+	Tags       []string `json:"tags"`
 }
 
 func From(yamlData []byte) (ConfigTournaments, error) {

@@ -32,12 +32,10 @@ export default function Tournaments({selected}) {
             return <p>No upcoming events</p>
         }
 
-        return events.upcoming.map((tourney) => {
+        return events.upcoming.map((dayTournament) => {
             return (
                 <>
-                    {tourney.dayTournaments.map((dayTournament) => {
-                        return displayDayTournaments(dayTournament)
-                    })}
+                    {displayDayTournaments(dayTournament)}
                 </>
             )
         })
@@ -48,12 +46,10 @@ export default function Tournaments({selected}) {
         if (events.completed === null) {
             return <p>No completed events</p>
         }
-        return events.completed.map((tournaments) => {
+        return events.completed.map((dayTournament) => {
             return (
                 <>
-                    {tournaments.map((dayTournament) => {
-                        return displayDayTournaments(dayTournament)
-                    })}
+                    {displayDayTournaments(dayTournament)}
                 </>
             )
         })
@@ -97,10 +93,12 @@ export default function Tournaments({selected}) {
                         )
                     })}
                 </div>
-                <strong>Host: <a href={"https://twitter.com/" + dayTournament.host}>{dayTournament.host}</a></strong>
-                 - <Moment unix local fromNow>
-                    {dayTournament.timeUnixSec}
-                </Moment>
+                <strong>Host: <a
+                    href={"https://twitter.com/" + dayTournament.host}>{dayTournament.host}</a></strong> - <Moment unix
+                                                                                                                   local
+                                                                                                                   fromNow>
+                {dayTournament.timeUnixSec}
+            </Moment>
                 <p>{dayTournament.details}</p>
                 <strong>Links:</strong>
                 {dayTournament.links.map((link) => {
