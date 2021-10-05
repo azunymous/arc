@@ -1,8 +1,8 @@
 name: New Event
-about: Create a new event
-title: ''
+description: Create a new event
+title: 'New Event'
 labels: automated, event
-assignees: ''
+assignees: []
 
 body:
   - type: input
