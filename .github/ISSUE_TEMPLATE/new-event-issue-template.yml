@@ -64,6 +64,14 @@ body:
       placeholder: 2021-10-05T18:08:28+00:00-05:00
     validations:
       required: false
-
+- type: textarea
+  id: repro
+  attributes:
+    label: Extra links
+    description: "Additional links for your event e.g Website, bracket or social media. Please put one link per line."
+    value: |
+      https://my-cool-event.com
+  validations:
+    required: false
 
 
