@@ -31,9 +31,9 @@ body:
     validations:
       required: false
   - type: input
-    id: Region
+    id: region
     attributes:
-      label: region
+      label: Region
       description: Where is this event?
       placeholder: US West
     validations:
