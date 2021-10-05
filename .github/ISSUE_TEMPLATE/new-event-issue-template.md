@@ -5,7 +5,66 @@ title: ''
 labels: automated, event
 assignees: ''
 
-
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Name of event
+      placeholder: Showdown!
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: Host
+      description: Twitter Handle
+      placeholder: "@MeltyBloodPlayer"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: General short description of the event
+      placeholder: Awesome melty blood
+      value: "MBTL!"
+    validations:
+      required: false
+  - type: input
+    id: region
+    attributes:
+      label: region
+      description: Where is this event?
+      placeholder: US West
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Which platform?
+      multiple: false
+      options:
+        - PC
+        - PS4
+        - Xbox
+        - Switch
+  - type: input
+    id: start-time
+    attributes:
+      label: Start Date & Time
+      description: Start Date & Time in the format similar to '2021-10-05T18:08+00:00' i.e (Year-month-date)T(24 hour time)(timezone)
+      placeholder: 2021-10-05T18:08:28+00:00-05:00
+    validations:
+      required: true
+  - type: input
+    id: end-time
+    attributes:
+      label: End Date & Time
+      description: End Date & Time in the format similar to '2021-10-05T18:08+00:00' i.e (Year-month-date)T(24 hour time)(timezone)
+      placeholder: 2021-10-05T18:08:28+00:00-05:00
+    validations:
+      required: false
 ---
 
 
