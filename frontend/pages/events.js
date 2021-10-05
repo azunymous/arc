@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import eventHtml from '../public/events.html'
 import Tournaments from "../components/tournaments";
 
 const Events = () => {

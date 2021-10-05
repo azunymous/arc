@@ -8,12 +8,19 @@ const Home = () => {
                 <div className="column  is-one-fifth has-text-centered">
                     <aside className="menu">
                         <p className="menu-label">
-                            External Shortcuts
+                            Quick Shortcuts
                         </p>
                         <ul className="menu-list">
                             <li><a href="https://meltyblood.typelumina.com/en/">Official Site</a></li>
                             <li><a href="https://wiki.gbl.gg/w/Melty_Blood/MBTL">Mizuumi Wiki</a></li>
                             <li><a href="http://lumina.melty.games/">Match Database</a></li>
+                            <li><Link href="/events">Events</Link></li>
+                        </ul>
+                        <p className="menu-label">
+                            Fun
+                        </p>
+                        <ul className="menu-list">
+                            <li><a href="https://meltycolors.art/">Melty Colors</a></li>
                         </ul>
                         <p className="menu-label">
                             Other

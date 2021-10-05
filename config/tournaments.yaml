@@ -40,3 +40,19 @@ tournaments:
       tags:
         - open
         - online
+    - name: Frosty Faustings XIV 2022
+      region: US
+      platform: PS4
+      date: 2022/01/28
+      timeUTC: 00:00
+      endDate: 2022/01/30
+      endTimeUTC: 23:59
+      host: @frostyfaustings
+      details: Melty Blood Type Lumina at Chicago's winter fighting game event!
+      links:
+        - https://frostyfaustings.com
+        - https://smash.gg/tournament/frosty-faustings-xiv-2022/details
+        - https://smash.gg/tournament/frosty-faustings-xiv-2022/event/melty-blood-type-lumina/overview
+      tags:
+        - open
+        - offline
