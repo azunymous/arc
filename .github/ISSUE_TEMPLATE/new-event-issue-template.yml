@@ -31,7 +31,7 @@ body:
     validations:
       required: false
   - type: input
-    id: region
+    id: Region
     attributes:
       label: region
       description: Where is this event?
