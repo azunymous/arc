@@ -1,7 +1,7 @@
 name: New Event
 description: Create a new event
 title: 'New Event submission'
-labels: automated, event
+labels: [automated, event]
 assignees: []
 
 body:
